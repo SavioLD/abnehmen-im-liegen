@@ -89,9 +89,76 @@
     if (current < steps.length - 1) {
       showStep(current + 1, true);
     } else {
-      form.requestSubmit ? form.requestSubmit() : form.submit();
+      submitLead();
     }
   });
+
+  // Anfrageformular per AJAX an Web3Forms senden
+  function submitLead() {
+    var span = btnNext.querySelector("span");
+    var label = span ? span.textContent : "";
+    if (span) span.textContent = "Wird gesendet …";
+    btnNext.disabled = true;
+    if (errBox) errBox.classList.remove("is-show");
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        btnNext.disabled = false;
+        if (span) span.textContent = label;
+        if (json && json.success) {
+          var card = document.getElementById("formCard");
+          var done = document.getElementById("formDone");
+          if (card) card.hidden = true;
+          if (done) { done.hidden = false; done.scrollIntoView({ behavior: "smooth", block: "center" }); }
+        } else if (errBox) {
+          errBox.textContent = (json && json.message) ? json.message : "Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder ruf uns an.";
+          errBox.classList.add("is-show");
+        }
+      })
+      .catch(function () {
+        btnNext.disabled = false;
+        if (span) span.textContent = label;
+        if (errBox) { errBox.textContent = "Verbindungsfehler. Bitte versuche es erneut oder ruf uns an: 0178 8755038."; errBox.classList.add("is-show"); }
+      });
+  }
+
+  // Direkt-Kontaktformular per AJAX an Web3Forms senden
+  var cForm = document.getElementById("contactForm");
+  if (cForm) {
+    cForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!cForm.checkValidity()) { cForm.reportValidity(); return; }
+      var btn = cForm.querySelector('button[type="submit"]');
+      var label = btn ? btn.textContent : "";
+      if (btn) { btn.textContent = "Wird gesendet …"; btn.disabled = true; }
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(cForm),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          if (btn) { btn.textContent = label; btn.disabled = false; }
+          if (json && json.success) {
+            var c = document.getElementById("contactCard");
+            var d = document.getElementById("contactDone");
+            if (c) c.hidden = true;
+            if (d) { d.hidden = false; d.scrollIntoView({ behavior: "smooth", block: "center" }); }
+          } else {
+            alert((json && json.message) ? json.message : "Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder ruf uns an.");
+          }
+        })
+        .catch(function () {
+          if (btn) { btn.textContent = label; btn.disabled = false; }
+          alert("Verbindungsfehler. Bitte versuche es erneut oder ruf uns an: 0178 8755038.");
+        });
+    });
+  }
 
   btnBack.addEventListener("click", function () {
     if (current > 0) showStep(current - 1, true);
@@ -122,6 +189,18 @@
       done.hidden = false;
       var top = done.getBoundingClientRect().top + window.pageYOffset - 90;
       window.scrollTo({ top: top, behavior: "smooth" });
+    }
+  }
+
+  // Erfolg nach dem Direkt-Kontaktformular (?msg=ok)
+  if (params.get("msg") === "ok") {
+    var cCard = document.getElementById("contactCard");
+    var cDone = document.getElementById("contactDone");
+    if (cCard) cCard.hidden = true;
+    if (cDone) {
+      cDone.hidden = false;
+      var ctop = cDone.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: ctop, behavior: "smooth" });
     }
   }
 

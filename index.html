@@ -150,13 +150,14 @@
       </div>
 
       <form id="leadForm"
-            action="https://formsubmit.co/info@abnehmenimliegen-rottweil.de"
+            action="https://api.web3forms.com/submit"
             method="POST" novalidate>
-        <input type="hidden" name="_subject" value="Neue Anfrage · Abnehmen im Liegen Rottweil" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="https://www.abnehmenimliegen-rottweil.de/?lead=ok" />
+        <!-- Web3Forms: bitte DEIN-WEB3FORMS-ACCESS-KEY durch euren echten Access Key ersetzen -->
+        <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY" />
+        <input type="hidden" name="subject" value="Neue Anfrage über die Website · Abnehmen im Liegen Rottweil" />
+        <input type="hidden" name="from_name" value="Abnehmen im Liegen Rottweil – Anfrageformular" />
         <input type="hidden" name="Quelle" value="Landingpage / Meta Ads" />
+        <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <!-- Schritt 1: Ziel -->
         <div class="fstep is-active" data-autonext="true">
@@ -931,6 +932,74 @@
         <div style="margin-top:24px;">
           <a href="#beratung" class="btn btn--primary btn--lg">Beratung in Rottweil sichern</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIREKT-KONTAKT / NACHRICHT
+============================================================= -->
+<section class="section" id="kontakt">
+  <div class="shell">
+    <div class="section-head">
+      <span class="eyebrow eyebrow--center">Kontakt</span>
+      <h2>Lieber direkt schreiben?</h2>
+      <p>Kein Fragen-Funnel nötig – schreib uns einfach deine Nachricht. Wir melden uns schnellstmöglich persönlich bei dir.</p>
+    </div>
+    <div class="contact-wrap" id="contactCard">
+      <form class="contact-form" id="contactForm"
+            action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms: bitte DEIN-WEB3FORMS-ACCESS-KEY durch euren echten Access Key ersetzen -->
+        <input type="hidden" name="access_key" value="DEIN-WEB3FORMS-ACCESS-KEY" />
+        <input type="hidden" name="subject" value="Neue Nachricht über die Website · Abnehmen im Liegen Rottweil" />
+        <input type="hidden" name="from_name" value="Abnehmen im Liegen Rottweil – Kontaktformular" />
+        <input type="hidden" name="Quelle" value="Direkt-Kontaktformular" />
+        <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="field--grid">
+          <label class="field"><span>Name *</span>
+            <input type="text" name="Name" required autocomplete="name" placeholder="Dein Name" />
+          </label>
+          <label class="field"><span>Telefon (optional)</span>
+            <input type="tel" name="Telefon" autocomplete="tel" placeholder="z. B. 0178 1234567" />
+          </label>
+        </div>
+        <label class="field"><span>E-Mail-Adresse *</span>
+          <input type="email" name="E-Mail" required autocomplete="email" placeholder="name@beispiel.de" />
+        </label>
+        <label class="field"><span>Deine Nachricht *</span>
+          <textarea name="Nachricht" rows="5" required placeholder="Wie können wir dir helfen? Schreib uns gern deine Frage oder deinen Wunschtermin."></textarea>
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="Datenschutz_Einwilligung" required />
+          <span>Ich bin damit einverstanden, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert und verarbeitet werden. Mehr in der <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>. *</span>
+        </label>
+        <button type="submit" class="btn btn--primary btn--lg btn--block">Nachricht senden</button>
+      </form>
+      <aside class="contact-aside">
+        <h3>Direkt erreichen</h3>
+        <ul class="contact-aside__list">
+          <li><a href="https://wa.me/491788755038?text=Hallo%20Mila%2C%20ich%20habe%20eine%20Frage%20zu%20Abnehmen%20im%20Liegen%20in%20Rottweil." target="_blank" rel="noopener">
+            <span class="contact-aside__ico is-wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.06 24l1.7-6.2A11.9 11.9 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.45L.06 24zM6.6 20.2l.37.22a9.9 9.9 0 1 0-3.4-3.4l.23.37-1 3.5 3.8-1.09zM18 14.3c-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.8-.77.96-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2.01s.86 2.33.98 2.49c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.45-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg></span>
+            <span style="display:block">WhatsApp<small>Schnellste Antwort</small></span>
+          </a></li>
+          <li><a href="tel:+491788755038">
+            <span class="contact-aside__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span style="display:block">0178 8755038<small>Mo – Sa nach Vereinbarung</small></span>
+          </a></li>
+          <li><a href="mailto:info@abnehmenimliegen-rottweil.de">
+            <span class="contact-aside__ico"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span style="display:block">E-Mail<small>info@abnehmenimliegen-rottweil.de</small></span>
+          </a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="contact-wrap" id="contactDone" hidden>
+      <div class="contact-done" style="grid-column:1/-1;">
+        <div class="ico"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5 9-11"/></svg></div>
+        <h3>Nachricht ist raus – danke!</h3>
+        <p>Wir haben deine Nachricht erhalten und melden uns so schnell wie möglich persönlich bei dir. 💜</p>
       </div>
     </div>
   </div>
