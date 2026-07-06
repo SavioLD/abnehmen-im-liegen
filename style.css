@@ -590,6 +590,13 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
 }
 .footer__logo img { height: 62px; width: auto; display: block; }
 .footer__rating { margin-top: 16px; font-size: 14px; font-weight: 600; color: #d7cff0; }
+.footer__ig {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 18px;
+  background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+  color: #fff; font-weight: 700; font-size: 14.5px; padding: 11px 20px; border-radius: 999px;
+  transition: transform .2s, box-shadow .2s;
+}
+.footer__ig:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(220,39,67,.4); }
 .footer__rating .stars { font-size: 15px; margin-right: 4px; }
 
 /* ---------- Garantie-Band ---------- */
@@ -716,14 +723,20 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
   border: 1px solid var(--violet-200); border-radius: var(--radius-lg); padding: 28px 26px;
 }
 .contact-aside h3 { font-size: 18px; margin-bottom: 16px; }
-.contact-aside__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-.contact-aside__list a, .contact-aside__list span { display: flex; align-items: center; gap: 12px; color: var(--ink); font-weight: 600; font-size: 15px; }
-.contact-aside__ico {
-  width: 40px; height: 40px; border-radius: 12px; flex: 0 0 auto; display: grid; place-items: center;
-  background: #fff; color: var(--violet-700); box-shadow: var(--shadow-sm);
+.contact-aside__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.contact-aside__list a {
+  display: flex; align-items: center; gap: 14px; padding: 9px 8px; border-radius: 14px;
+  color: var(--ink); font-weight: 700; font-size: 15px; line-height: 1.25; transition: background .15s;
 }
-.contact-aside__ico.is-wa { background: #25d366; color: #fff; }
-.contact-aside__list small { display: block; color: var(--muted); font-weight: 500; font-size: 12.5px; }
+.contact-aside__list a:hover { background: rgba(255,255,255,.55); color: var(--ink); }
+.contact-aside__ico {
+  width: 44px; height: 44px; border-radius: 13px; flex: 0 0 auto; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--violet-600), var(--violet-500)); color: #fff;
+}
+.contact-aside__ico svg { width: 21px; height: 21px; }
+.contact-aside__ico.is-wa { background: #25d366; }
+.contact-aside__ico.is-ig { background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888); }
+.contact-aside__list small { display: block; color: var(--muted); font-weight: 500; font-size: 12.5px; margin-top: 2px; }
 .contact-done { text-align: center; padding: 20px 0; }
 .contact-done .ico { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 16px; background: var(--violet-100); color: var(--violet-700); display: grid; place-items: center; }
 .contact-done h3 { font-family: var(--font-display); font-weight: 600; font-size: 25px; }
