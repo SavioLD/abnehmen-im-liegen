@@ -590,6 +590,13 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
 }
 .footer__logo img { height: 62px; width: auto; display: block; }
 .footer__rating { margin-top: 16px; font-size: 14px; font-weight: 600; color: #d7cff0; }
+.footer__ig {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 18px;
+  background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888);
+  color: #fff; font-weight: 700; font-size: 14.5px; padding: 11px 20px; border-radius: 999px;
+  transition: transform .2s, box-shadow .2s;
+}
+.footer__ig:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(220,39,67,.4); }
 .footer__rating .stars { font-size: 15px; margin-right: 4px; }
 
 /* ---------- Garantie-Band ---------- */
@@ -723,6 +730,7 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
   background: #fff; color: var(--violet-700); box-shadow: var(--shadow-sm);
 }
 .contact-aside__ico.is-wa { background: #25d366; color: #fff; }
+.contact-aside__ico.is-ig { background: linear-gradient(45deg, #f09433, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888); color: #fff; }
 .contact-aside__list small { display: block; color: var(--muted); font-weight: 500; font-size: 12.5px; }
 .contact-done { text-align: center; padding: 20px 0; }
 .contact-done .ico { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 16px; background: var(--violet-100); color: var(--violet-700); display: grid; place-items: center; }
