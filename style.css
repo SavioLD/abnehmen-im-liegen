@@ -897,7 +897,7 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
 .pkg-price b { font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 5vw, 44px); color: var(--violet-700); line-height: 1; }
 .pkg-price .pkg-vat { font-size: 13.5px; font-weight: 600; color: var(--muted); }
 .pkg-perunit { font-size: 14.5px; font-weight: 700; color: var(--ink-2); margin: 0 0 18px; }
-.pkg-perunit .pkg-perunit__hint { font-weight: 600; color: var(--muted); }
+.pkg-perunit .pkg-perunit__hint, .pkg-perunit .pkg-perunit__sep { font-weight: 600; color: var(--muted); }
 
 /* Vorteils-Liste */
 .pkg-benefits { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 11px; }
@@ -990,3 +990,74 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
 .faq .lines > p { margin: 0; }
 .cta-final .lines { max-width: 560px; margin: 0 auto 28px; gap: 6px; }
 .cta-final .lines > p { margin: 0; }
+
+/* =============================================================
+   PAKETSEITE — Mobile-Feinschliff (nur body.page-pakete)
+============================================================= */
+@media (max-width: 720px) {
+  /* Keine Sticky-Leiste auf der Paketseite -> kein Platzhalter unten,
+     WhatsApp-Button wieder normal in die Ecke */
+  body.page-pakete { padding-bottom: 0; }
+  .page-pakete .wa-float { bottom: 18px; }
+
+  .page-pakete .section { padding: 52px 0; }
+
+  /* Intro kompakter, Headline ruhiger */
+  .page-pakete .pkg-intro { margin-bottom: 28px; }
+  .page-pakete .pkg-intro h1 { font-size: clamp(27px, 7.4vw, 34px); line-height: 1.12; margin: 8px 0 14px; }
+  .page-pakete .pkg-intro .lines { gap: 8px; }
+  .page-pakete .pkg-intro .lines > p { font-size: 16.5px; }
+  .page-pakete .pkg-trust { margin-top: 18px; gap: 8px 16px; }
+  .page-pakete .pkg-trust span { font-size: 13.5px; }
+
+  /* Featured-Karte: Bild als Banner, Innenabstand enger */
+  .page-pakete .pkg-featured { margin-bottom: 22px; border-radius: var(--radius); }
+  .page-pakete .pkg-featured__media { aspect-ratio: 16 / 9; }
+  .page-pakete .pkg-featured__body { padding: 22px 20px 24px; }
+  .page-pakete .pkg-featured__body h2 { font-size: 24px; }
+  .page-pakete .pkg-featured__body .lines { margin-bottom: 16px; }
+  .page-pakete .pkg-featured__body .lines > p { font-size: 15.5px; }
+  .page-pakete .pkg-featured .pkg-perunit__hint { display: block; margin-top: 2px; }
+  .page-pakete .pkg-featured .pkg-perunit__sep { display: none; }
+
+  /* Paketkarten: Bild kompakt (Preis schneller sichtbar), engere Abstände */
+  .page-pakete .pkg-grid { gap: 16px; }
+  .page-pakete .pkg-card { border-radius: var(--radius); }
+  .page-pakete .pkg-card__media { aspect-ratio: 4 / 3; }
+  .page-pakete .pkg-card__body { padding: 20px 18px 22px; }
+  .page-pakete .pkg-card__body h3 { font-size: 21px; }
+  .page-pakete .pkg-price b { font-size: 32px; }
+  .page-pakete .pkg-perunit { margin-bottom: 12px; }
+  .page-pakete .pkg-card__desc { margin-bottom: 14px; }
+  .page-pakete .pkg-benefits { gap: 9px; margin-bottom: 18px; }
+  .page-pakete .pkg-benefits li { font-size: 15px; }
+  .page-pakete .pkg-note { font-size: 12.5px; margin-top: 10px; }
+
+  /* Ablauf */
+  .page-pakete .flow { gap: 14px; }
+  .page-pakete .flow__item { padding: 22px 20px; }
+  .page-pakete .flow__num { width: 40px; height: 40px; font-size: 19px; margin-bottom: 12px; }
+
+  /* Bezahlung */
+  .page-pakete .pay-info { gap: 22px; }
+  .page-pakete .pay-info__text h2 { font-size: clamp(24px, 6.6vw, 30px); }
+  .page-pakete .pay-info__text .lines > p { font-size: 15.5px; }
+  .page-pakete .pay-info__card { padding: 22px 20px; }
+
+  /* FAQ */
+  .page-pakete .faq { gap: 10px; }
+
+  /* Abschluss-CTA: Buttons volle Breite statt Umbruch im Button */
+  .page-pakete .cta-final { padding: 36px 20px; }
+  .page-pakete .cta-final h2 { font-size: clamp(24px, 6.6vw, 30px); }
+  .page-pakete .cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .page-pakete .cta-row .btn { width: 100%; font-size: 15px; padding: 15px 16px; }
+
+  /* Komfortable Tap-Höhe auf allen Buch-Buttons */
+  .page-pakete .pkg-card .btn,
+  .page-pakete .pkg-featured .btn { min-height: 50px; }
+}
+@media (max-width: 420px) {
+  .page-pakete .pkg-intro h1 { font-size: 26px; }
+  .page-pakete .pkg-price b { font-size: 30px; }
+}
