@@ -977,3 +977,16 @@ section[id], .hero__form[id] { scroll-margin-top: 102px; }
 @media (max-width: 720px) {
   .pkg-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
 }
+
+/* --- Sätze klar untereinander: jede Aussage als eigene Zeile --- */
+.lines { display: grid; gap: 8px; }
+.lines > p { margin: 0; max-width: none; }
+.pkg-intro .lines { max-width: 640px; margin: 0 auto; gap: 10px; }
+.pkg-featured__body .lines { margin-bottom: 20px; }
+.pkg-featured__body .lines > p { color: var(--ink-2); font-size: 16px; }
+.flow__item .lines { gap: 6px; }
+.pay-info__text .lines { gap: 12px; margin-bottom: 16px; }
+.faq .lines { margin: 0 0 18px; gap: 8px; }
+.faq .lines > p { margin: 0; }
+.cta-final .lines { max-width: 560px; margin: 0 auto 28px; gap: 6px; }
+.cta-final .lines > p { margin: 0; }
